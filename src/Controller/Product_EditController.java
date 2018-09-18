@@ -36,6 +36,8 @@ public class Product_EditController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+        // lets get started
     }    
 
     @FXML

@@ -1,0 +1,74 @@
+
+
+.prompt {
+    -fx-prompt-text-fill: black;
+ 
+}
+
+.bottom{
+    -fx-background-image: url('../Images/wadada.png');
+    -fx-background-repeat: no-repeat ;
+   
+}
+ 
+.scroll-pane > .viewport {
+    
+-fx-background-color: transparent ;    
+}
+
+#cash{
+    -fx-background-color:  #ff8080 ;
+}
+#cash:hover{
+    -fx-background-color: #ff9999 ;
+}
+#cash:armed{
+-fx-effect: innershadow( three-pass-box , black , 25, 0.0 , 0 , 0 );    
+}
+
+#visa{
+    -fx-background-color:  #ffb366 ;
+}
+#visa:hover{
+    -fx-background-color: #ffbf80 ;
+}
+#visa:armed{
+-fx-effect: innershadow( three-pass-box , black , 25, 0.0 , 0 , 0 );    
+}
+
+
+.calc{
+    -fx-background-color: #85adad;
+    
+}
+
+.calc:hover{
+    -fx-background-color: #a3c2c2;
+    
+}
+.calc:armed{
+    -fx-background-color: #669999;
+    
+}
+.calc:focused{
+    -fx-border-color:dodgerblue;
+    -fx-border-width : 2 ;
+    -fx-border-radius : 15px;
+}
+
+.bigButtons{
+-fx-background-color: linear-gradient(to TOP,#97461a,#f0c1a8,#6c2e16);
+
+
+}
+
+.bigButtons:hover{
+     -fx-background-color: linear-gradient(to TOP,#97461a,#fbf0e9,#6c2e16);
+     
+}
+
+.bigButtons:pressed{
+    
+    -fx-effect: innershadow( three-pass-box , black , 35, 0.0 , 0 , 0 );    
+
+}

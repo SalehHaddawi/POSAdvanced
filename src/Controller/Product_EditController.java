@@ -96,6 +96,7 @@ public class Product_EditController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+<<<<<<< HEAD
 
         //adding values to general type
         ui_generalType_Combobx.getItems().addAll("عطور", "دهن عود");
@@ -136,6 +137,11 @@ public class Product_EditController implements Initializable {
         });
 
     }
+=======
+        // TODO i'm ghamdi
+        
+    }    
+>>>>>>> 0a270ab77179b266eda033ff5e34afe33a9b162c
 
     @FXML
     private void show_edit_atrribute(ActionEvent event) {

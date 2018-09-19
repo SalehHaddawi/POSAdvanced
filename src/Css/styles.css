@@ -80,5 +80,17 @@
     -fx-background-color: #aeeaae ;
 }
 #returnButton:armed{
--fx-effect: innershadow( three-pass-box , black , 25, 0.0 , 0 , 0 );    
+-fx-effect: innershadow( three-pass-box , gray , 25, 0.0 , 0 , 0 );    
+}
+
+ 
+ 
+ #productButton{
+    -fx-background-color: #0077b3 ;
+}
+#productButton:hover{
+    -fx-background-color: #0088cc ;
+}
+#productButton:armed{
+-fx-effect: innershadow( three-pass-box , black , 15, 0.0 , 0 , 0 );    
 }

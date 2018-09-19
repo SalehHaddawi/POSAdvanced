@@ -359,7 +359,7 @@
                         <Font name="JF Flat Regular" size="29.0" />
                      </font>
                      <effect>
-                        <DropShadow />
+                        <DropShadow color="#00000080" />
                      </effect>
                   </Button>
                </children>

@@ -354,7 +354,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="88.0" prefWidth="298.0" style="-fx-background-color: #85e085; -fx-background-radius: 10px;" text="اتمام العملية">
+                  <Button id="returnButton" mnemonicParsing="false" prefHeight="88.0" prefWidth="298.0" style="-fx-background-radius: 10px;" stylesheets="@../Css/styles.css" text="اتمام العملية">
                      <font>
                         <Font name="JF Flat Regular" size="29.0" />
                      </font>

@@ -28,11 +28,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 
-/**
- * FXML Controller class
- *
- * @author abdlmjeed
- */
+
 public class Product_EditController implements Initializable {
 
     @FXML
@@ -66,6 +62,7 @@ public class Product_EditController implements Initializable {
     private TableColumn<Product_Edit_TableView, Integer> barCode;
 
     Product_Edit_TableView selected_Item;
+    
     @FXML
     private TextField ui_productName_TextField;
     @FXML
@@ -155,10 +152,9 @@ public class Product_EditController implements Initializable {
     }
 
     @FXML
-    private void addToTable(ActionEvent event) {
-
-        //if manager want to add new item to the inventory
-        if (ui_Add_toggleButton.isSelected()) {
+    private void addToTable(MouseEvent event) {
+        
+            if (ui_Add_toggleButton.isSelected()) {
             Product_Edit_TableView newItem = new Product_Edit_TableView();
 
             newItem.setBarCode(Integer.parseInt(ui_BarCode_TextField.getText()));
@@ -175,11 +171,7 @@ public class Product_EditController implements Initializable {
             return;
         }
         
-
-    }
-
-    @FXML
-    private void addToTable(MouseEvent event) {
+        
     }
 
    

@@ -96,7 +96,6 @@ public class Product_EditController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-<<<<<<< HEAD
 
         //adding values to general type
         ui_generalType_Combobx.getItems().addAll("عطور", "دهن عود");
@@ -137,11 +136,9 @@ public class Product_EditController implements Initializable {
         });
 
     }
-=======
         // TODO i'm ghamdi
         
-    }    
->>>>>>> 0a270ab77179b266eda033ff5e34afe33a9b162c
+      
 
     @FXML
     private void show_edit_atrribute(ActionEvent event) {
@@ -160,6 +157,7 @@ public class Product_EditController implements Initializable {
     @FXML
     private void addToTable(ActionEvent event) {
 
+        //if manager want to add new item to the inventory
         if (ui_Add_toggleButton.isSelected()) {
             Product_Edit_TableView newItem = new Product_Edit_TableView();
 
@@ -176,6 +174,7 @@ public class Product_EditController implements Initializable {
             observableListFor_productTableView.add(newItem);
             return;
         }
+        
 
     }
 

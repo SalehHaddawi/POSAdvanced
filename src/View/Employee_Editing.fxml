@@ -7,6 +7,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -21,7 +23,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="987.0" prefWidth="1883.0" style="-fx-background-color: c7d0d9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Employee_EditingController">
    <children>
-      <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox alignment="CENTER" prefHeight="106.0" prefWidth="1883.0" spacing="10.0" style="-fx-background-color: linear-gradient(to right,#434343,#434343,#5d5d5d,#434343, #5d5d5d,#434343);">
                <children>
@@ -125,7 +127,7 @@
                      <children>
                         <HBox fx:id="add_product" alignment="TOP_CENTER">
                            <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="551.0" prefWidth="281.0" spacing="40.0">
+                              <VBox alignment="TOP_CENTER" prefHeight="551.0" prefWidth="281.0" spacing="5.0">
                                  <padding>
                                     <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                  </padding>
@@ -133,27 +135,71 @@
                                     <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="270.0" spacing="5.0">
                                        <children>
                                           <TextField fx:id="nameTextField" />
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="الأسم :" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="الأسن">
+                                             <font>
+                                                <Font name="JF Flat Regular" size="13.0" />
+                                             </font></Text>
                                        </children>
                                     </HBox>
                                     <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                                        <children>
                                           <PasswordField fx:id="passwordPasswordField" />
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="كلمة المرور :" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="كلمة المرور :">
+                                             <font>
+                                                <Font name="JF Flat Regular" size="13.0" />
+                                             </font></Text>
                                        </children>
                                     </HBox>
                                     <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                                        <children>
                                           <TextField fx:id="emailTextField" />
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="الإميل :" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="الإميل :">
+                                             <font>
+                                                <Font name="JF Flat Regular" size="13.0" />
+                                             </font></Text>
                                        </children>
                                     </HBox>
-                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="270.0" spacing="5.0">
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="270.0">
                                        <children>
-                                          <TextField fx:id="accessToAdminOrEmployeeTextField" />
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="الصلاحية ( مشرف ، موظف ) :" />
+                                          <ToggleButton fx:id="employeeToggleButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="70.0" prefWidth="120.0" style="-fx-background-radius: 10px 0px 0px 10px;" text="موظف">
+                                             <font>
+                                                <Font name="JF Flat Regular" size="25.0" />
+                                             </font>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="type" />
+                                             </toggleGroup>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="adminToggleButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="70.0" prefWidth="120.0" selected="true" style="-fx-background-radius: 0px 10px 10px 0px;" text="مشرف">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="type" />
+                                             </toggleGroup>
+                                             <font>
+                                                <Font name="JF Flat Regular" size="25.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="الصلاحية : " />
                                        </children>
                                     </HBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                       <children>
+                                          <Button id="returnButton" mnemonicParsing="false" onAction="#deleteButtonAction" prefHeight="88.0" prefWidth="298.0" style="-fx-background-radius: 10px;" stylesheets="@../Css/styles.css" text="حذف">
+                                             <font>
+                                                <Font name="JF Flat Regular" size="29.0" />
+                                             </font>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </Button>
+                                          <Button id="returnButton" mnemonicParsing="false" onAction="#showDataButtonAction" prefHeight="88.0" prefWidth="298.0" style="-fx-background-radius: 10px;" stylesheets="@../Css/styles.css" text="إظهار المعلومات">
+                                             <font>
+                                                <Font name="JF Flat Regular" size="29.0" />
+                                             </font>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </Button>
+                                       </children>
+                                    </VBox>
                                  </children>
                               </VBox>
                               <VBox alignment="TOP_CENTER" prefHeight="551.0" prefWidth="281.0" spacing="40.0">
@@ -164,63 +210,56 @@
                                     <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="270.0" spacing="5.0">
                                        <children>
                                           <TextField fx:id="employeeIDTextField" />
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="الرقم الوظيفي :" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="الرقم الوظيفي :">
+                                             <font>
+                                                <Font name="JF Flat Regular" size="13.0" />
+                                             </font></Text>
                                        </children>
                                     </HBox>
                                     <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                                        <children>
                                           <TextField fx:id="usernameTextField" />
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="اسم المستخدم :" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="اسم المستخدم :">
+                                             <font>
+                                                <Font name="JF Flat Regular" size="13.0" />
+                                             </font></Text>
                                        </children>
                                     </HBox>
-                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                                        <children>
                                           <TextField fx:id="ageTextField" />
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="العمر :" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="العمر :">
+                                             <font>
+                                                <Font name="JF Flat Regular" size="13.0" />
+                                             </font></Text>
                                        </children>
                                     </HBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                       <children>
+                                          <Button id="returnButton" mnemonicParsing="false" onAction="#addButtonAction" prefHeight="88.0" prefWidth="298.0" style="-fx-background-radius: 10px;" stylesheets="@../Css/styles.css" text="إضافة">
+                                             <font>
+                                                <Font name="JF Flat Regular" size="29.0" />
+                                             </font>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </Button>
+                                          <Button id="returnButton" mnemonicParsing="false" onAction="#editButtonAtion" prefHeight="88.0" prefWidth="298.0" style="-fx-background-radius: 10px;" stylesheets="@../Css/styles.css" text="تعديل">
+                                             <font>
+                                                <Font name="JF Flat Regular" size="29.0" />
+                                             </font>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </Button>
+                                       </children>
+                                    </VBox>
                                  </children>
                               </VBox>
                            </children>
                         </HBox>
                      </children>
                   </StackPane>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-               <children>
-                  <Button id="returnButton" mnemonicParsing="false" onAction="#showDataButtonAction" prefHeight="88.0" prefWidth="298.0" style="-fx-background-radius: 10px;" stylesheets="@../Css/styles.css" text="إظهار المعلومات">
-                     <font>
-                        <Font name="JF Flat Regular" size="29.0" />
-                     </font>
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </Button>
-                  <Button id="returnButton" layoutX="803.0" layoutY="16.0" mnemonicParsing="false" onAction="#editButtonAtion" prefHeight="88.0" prefWidth="298.0" style="-fx-background-radius: 10px;" stylesheets="@../Css/styles.css" text="تعديل">
-                     <font>
-                        <Font name="JF Flat Regular" size="29.0" />
-                     </font>
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </Button>
-                  <Button id="returnButton" layoutX="952.0" layoutY="16.0" mnemonicParsing="false" onAction="#deleteButtonAction" prefHeight="88.0" prefWidth="298.0" style="-fx-background-radius: 10px;" stylesheets="@../Css/styles.css" text="حذف">
-                     <font>
-                        <Font name="JF Flat Regular" size="29.0" />
-                     </font>
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </Button>
-                  <Button id="returnButton" layoutX="1101.0" layoutY="16.0" mnemonicParsing="false" onAction="#addButtonAction" prefHeight="88.0" prefWidth="298.0" style="-fx-background-radius: 10px;" stylesheets="@../Css/styles.css" text="إضافة">
-                     <font>
-                        <Font name="JF Flat Regular" size="29.0" />
-                     </font>
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </Button>
                </children>
             </HBox>
          </children>
